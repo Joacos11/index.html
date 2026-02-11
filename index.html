@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infografía: Modelado de Sistema Académico</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+        }
+
+        .hero-gradient {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+        }
+
+        .card-hover:hover {
+            transform: translateY(-5px);
+            transition: all 0.3s ease;
+        }
+
+        .table-node {
+            border: 1px solid #e5e7eb;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            min-width: 150px;
+        }
+
+        .table-header {
+            background: #1e3a8a;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 7px 7px 0 0;
+            font-weight: bold;
+            font-size: 0.85rem;
+        }
+
+        .table-body {
+            padding: 8px;
+            font-size: 0.75rem;
+        }
+    </style>
+</head>
+<body class="p-4 md:p-8">
+
+    <div class="max-w-5xl mx-auto space-y-8">
+        <!-- Header / Carátula -->
+        <header class="hero-gradient text-white p-8 rounded-3xl shadow-2xl relative overflow-hidden">
+            <div class="relative z-10">
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+                    <div>
+                        <h2 class="text-blue-200 font-bold tracking-widest uppercase text-sm mb-2">Universidad Andina del Cusco</h2>
+                        <h1 class="text-3xl md:text-5xl font-extrabold mb-4">Modelado de Sistema Académico</h1>
+                        <p class="text-lg opacity-90 max-w-2xl">Facultad de Ingeniería y Arquitectura - Escuela Profesional de Ingeniería de Sistemas</p>
+                    </div>
+                    <div class="bg-white/10 p-4 rounded-2xl backdrop-blur-sm border border-white/20">
+                        <p class="text-sm font-semibold text-blue-100">DOCENTE</p>
+                        <p class="text-lg">Hugo Espetia Huamanga</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Círculos decorativos -->
+            <div class="absolute -top-10 -right-10 w-40 h-40 bg-white/10 rounded-full"></div>
+            <div class="absolute -bottom-10 -left-10 w-64 h-64 bg-blue-400/20 rounded-full"></div>
+        </header>
+
+        <!-- Introducción & Equipo -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <section class="md:col-span-2 bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+                <h3 class="text-xl font-bold text-gray-800 mb-4 flex items-center">
+                    <i class="fas fa-book-open text-blue-600 mr-2"></i> Introducción
+                </h3>
+                <p class="text-gray-600 leading-relaxed">
+                    Este proyecto analiza el modelado de bases de datos aplicado a un entorno académico real. 
+                    El objetivo es aplicar conocimientos críticos para estructurar la información de alumnos, docentes y notas, 
+                    asegurando la integridad de los datos y la eficiencia del sistema.
+                </p>
+            </section>
+
+            <section class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+                <h3 class="text-xl font-bold text-gray-800 mb-4 flex items-center">
+                    <i class="fas fa-users text-blue-600 mr-2"></i> Equipo
+                </h3>
+                <ul class="space-y-2 text-sm text-gray-600">
+                    <li class="flex items-center"><span class="w-2 h-2 bg-blue-500 rounded-full mr-2"></span> Olivera Ochoa Paul</li>
+                    <li class="flex items-center"><span class="w-2 h-2 bg-blue-500 rounded-full mr-2"></span> Carpio Delgado Alejandro</li>
+                    <li class="flex items-center"><span class="w-2 h-2 bg-blue-500 rounded-full mr-2"></span> Haro Rosales Joaquín</li>
+                    <li class="flex items-center"><span class="w-2 h-2 bg-blue-500 rounded-full mr-2"></span> Molero Zegarra Thiago</li>
+                </ul>
+            </section>
+        </div>
+
+        <!-- Etapas del Desarrollo -->
+        <section class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+            <h3 class="text-2xl font-bold text-gray-800 mb-8 text-center">Proceso de Desarrollo</h3>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
+                <!-- Step 1 -->
+                <div class="flex flex-col items-center text-center space-y-4">
+                    <div class="w-16 h-16 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-2xl font-bold shadow-inner">1</div>
+                    <h4 class="font-bold text-gray-700">Planificación</h4>
+                    <p class="text-sm text-gray-500">Organización manual de entidades (ALU, DOC, NOT) y definición de atributos primarios.</p>
+                </div>
+                <!-- Step 2 -->
+                <div class="flex flex-col items-center text-center space-y-4">
+                    <div class="w-16 h-16 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-2xl font-bold shadow-inner">2</div>
+                    <h4 class="font-bold text-gray-700">Lógica de Relación</h4>
+                    <p class="text-sm text-gray-500">Resolución de duplicaciones y depuración de la estructura relacional para evitar redundancia.</p>
+                </div>
+                <!-- Step 3 -->
+                <div class="flex flex-col items-center text-center space-y-4">
+                    <div class="w-16 h-16 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-2xl font-bold shadow-inner">3</div>
+                    <h4 class="font-bold text-gray-700">Implementación</h4>
+                    <p class="text-sm text-gray-500">Integración final en Excel Power Pivot para análisis y visualización de datos.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Modelo de Datos (Diagrama visual simplificado) -->
+        <section class="bg-slate-50 p-8 rounded-2xl border-2 border-dashed border-gray-300">
+            <h3 class="text-xl font-bold text-gray-800 mb-6 flex items-center justify-center">
+                <i class="fas fa-project-diagram text-blue-600 mr-2"></i> Estructura del Modelo (Power Pivot)
+            </h3>
+            
+            <div class="flex flex-wrap justify-center gap-8 items-start py-8">
+                <!-- Alumno -->
+                <div class="table-node card-hover">
+                    <div class="table-header">Alumno</div>
+                    <div class="table-body">
+                        <div class="flex items-center text-blue-700 font-semibold mb-1"><i class="fas fa-key mr-1 scale-75"></i> CodAlumno</div>
+                        <div>Nombres</div>
+                    </div>
+                </div>
+
+                <!-- Flecha -->
+                <div class="self-center hidden md:block text-gray-300 text-2xl"><i class="fas fa-long-arrow-alt-right"></i></div>
+
+                <!-- Notas -->
+                <div class="table-node card-hover border-blue-500 border-2">
+                    <div class="table-header bg-blue-700">Notas</div>
+                    <div class="table-body">
+                        <div class="text-gray-500 italic mb-1 border-b pb-1">Relacional</div>
+                        <div>CodAlumno (FK)</div>
+                        <div>IdAsignatura (FK)</div>
+                        <div>IdDocente (FK)</div>
+                        <div class="font-bold text-green-600 mt-1">Calificación</div>
+                    </div>
+                </div>
+
+                <!-- Flecha -->
+                <div class="self-center hidden md:block text-gray-300 text-2xl"><i class="fas fa-long-arrow-alt-left"></i></div>
+
+                <!-- Docente -->
+                <div class="table-node card-hover">
+                    <div class="table-header">Docente</div>
+                    <div class="table-body">
+                        <div class="flex items-center text-blue-700 font-semibold mb-1"><i class="fas fa-key mr-1 scale-75"></i> IdDocente</div>
+                        <div>Nombres</div>
+                        <div>Asignatura</div>
+                    </div>
+                </div>
+
+                <!-- Carga -->
+                <div class="table-node card-hover">
+                    <div class="table-header">Carga</div>
+                    <div class="table-body">
+                        <div>IdDocente</div>
+                        <div>Asignatura</div>
+                        <div>Ambiente</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Conclusiones & Footer -->
+        <footer class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="bg-green-50 p-6 rounded-2xl border border-green-100">
+                <h4 class="font-bold text-green-800 mb-2">Conclusión Principal</h4>
+                <p class="text-sm text-green-700">
+                    La estructuración correcta mediante identificadores comunes permitió asociar eficientemente alumnos y docentes sin duplicidad de datos, facilitando reportes en Power Pivot.
+                </p>
+            </div>
+            <div class="bg-gray-800 text-white p-6 rounded-2xl flex flex-col justify-center">
+                <div class="flex justify-around items-center">
+                    <div class="text-center">
+                        <p class="text-2xl font-bold">2026</p>
+                        <p class="text-xs text-gray-400">Año del Proyecto</p>
+                    </div>
+                    <div class="h-10 w-px bg-gray-600"></div>
+                    <div class="text-center">
+                        <p class="text-2xl font-bold">100%</p>
+                        <p class="text-xs text-gray-400">Participación</p>
+                    </div>
+                    <div class="h-10 w-px bg-gray-600"></div>
+                    <a href="https://github.com/AlejandroEd123/Modelado-de-base-de-datos-2026-1" target="_blank" class="text-blue-400 hover:text-blue-300 transition">
+                        <i class="fab fa-github text-3xl"></i>
+                        <p class="text-[10px] mt-1">Ver Código</p>
+                    </a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+</body>
+</html>
