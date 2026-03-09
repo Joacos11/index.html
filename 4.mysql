@@ -1,0 +1,39 @@
+CREATE TABLE Cliente (
+    nroDocumC VARCHAR(15) PRIMARY KEY,
+    tipoDocumC VARCHAR(20),
+    nombresC VARCHAR(100),
+    paternoC VARCHAR(100),
+    maternoC VARCHAR(100),
+    celularC VARCHAR(15)
+);
+
+CREATE TABLE Categoria (
+    idCategoria INT AUTO_INCREMENT PRIMARY KEY,
+    descripcionCat VARCHAR(100)
+);
+
+CREATE TABLE Producto (
+    idProducto INT AUTO_INCREMENT PRIMARY KEY,
+    nombreProducto VARCHAR(100),
+    precioReferencial DECIMAL(10,2),
+    idCategoria INT,
+    FOREIGN KEY (idCategoria) REFERENCES Categoria(idCategoria)
+);
+
+CREATE TABLE Comprobante (
+    idComprobante INT AUTO_INCREMENT PRIMARY KEY,
+    fechaHora DATETIME,
+    total DECIMAL(10,2),
+    nroDocumC VARCHAR(15),
+    FOREIGN KEY (nroDocumC) REFERENCES Cliente(nroDocumC)
+);
+
+CREATE TABLE DetalleComprobante (
+    idDetalle INT AUTO_INCREMENT PRIMARY KEY,
+    cantidad INT,
+    subtotal DECIMAL(10,2),
+    idProducto INT,
+    idComprobante INT,
+    FOREIGN KEY (idProducto) REFERENCES Producto(idProducto),
+    FOREIGN KEY (idComprobante) REFERENCES Comprobante(idComprobante)
+);
